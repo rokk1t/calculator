@@ -10,16 +10,16 @@ const divideJS = document.getElementById("divide-html");
 let actionJS = "+";
 
 //! functions
-plusJS.onclick = function() {
+plusJS.onclick = function () {
   actionJS = "+";
 };
-minusJS.onclick = function() {
+minusJS.onclick = function () {
   actionJS = "-";
 };
-multiplyJS.onclick = function() {
+multiplyJS.onclick = function () {
   actionJS = "*";
 };
-divideJS.onclick = function() {
+divideJS.onclick = function () {
   actionJS = "/";
 };
 
@@ -35,12 +35,16 @@ function resultPrint(_result) {
 function compute(_number1, _number2, _symbol) {
   const number1 = Number(_number1.value);
   const number2 = Number(_number2.value);
-    return _symbol === '+' ? number1 + number2 // true
-      : _symbol === '-' ? number1 - number2 // true
-      : _symbol === '*' ? number1 * number2 // true
-      : _symbol === '/' && number2 !== 0 ? number1 / number2 // true
-      : null;
-  }
+  return _symbol === "+"
+    ? number1 + number2 // true
+    : _symbol === "-"
+    ? number1 - number2 // true
+    : _symbol === "*"
+    ? number1 * number2 // true
+    : _symbol === "/" && number2 !== 0
+    ? number1 / number2 // true
+    : null;
+}
 
 submitJS.onclick = function () {
   const result = compute(input1JS, input2JS, actionJS);
